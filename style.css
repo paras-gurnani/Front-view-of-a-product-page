@@ -1,0 +1,79 @@
+h9 {
+  padding-left: 50px;
+}
+
+#img {
+  height: 125px;
+  width: 100px;
+  padding-bottom: 25px;
+  position: relative;
+  left: 50px;
+}
+
+#ss {
+  width=500px;
+  height=500px;
+  padding-top: 100px;
+}
+
+#text0 {
+  background-color: red;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#text1 {
+  background-color: blue;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#text2 {
+  background-color: orangered;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#text3 {
+  background-color: gray;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#text4 {
+  background-color: green;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#ous
+{
+  color:red;
+}
+#specs
+{
+  color:gray;
+}
+#details
+{
+  color:black;
+}
+#save
+{
+  color:red;
+}
+#strike
+{
+  color:gray;
+}
+h4{
+  display:inline-block;
+}
+h3
+{
+  display:inline-block;
+}
