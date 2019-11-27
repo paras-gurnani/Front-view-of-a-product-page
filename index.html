@@ -11,13 +11,23 @@
   <link rel="stylesheet" href="style.css">
   <!--cdn for icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--external js-->
+  <script src="inc.js" charset="utf-8"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-right">
     <a class="navbar-brand" href="">
-      <img src="shella.jpg" alt="shella">
-    </a>
+      <img src="shella1.jpg" alt="shella">
+      </a>
+      <ul class="nav navbar-nav navbar-right">
+          <li><i class="material-icons navbar-right" id="nav1">help_outline</i></li>
+          <li><h6 id="client">client service</h6></li>
+          <li><i class="material-icons" id="nav1">perm_identity</i></li>
+          <li><i class="far fa-heart" id="nav1"></i></li>
+          <li> <i class="material-icons" id="nav1">shopping_cart</i></li>
+      </ul>
   </nav>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -98,6 +108,10 @@
         </div>
       </li>
     </ul>
+    <form class="form-inline" id="search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
   </nav>
   <br>
   <h9>Home / Shop / Collection</h9>
@@ -170,10 +184,98 @@
         <h3><b>$45</b></h3>
         <h6 id="save">You save: $20.02 USD (40 %)</h6>
         <h4><b>Hurry up! Sale Ends In</b></h4>
+        <div id="countdown">
+          <div id='tiles'></div>
+          <div class="labels">
+            <li>Days</li>
+            <li>Hours</li>
+            <li>Mins</li>
+            <li>Secs</li>
+            <script>
+              var target_date = new Date().getTime() + (1000 * 3600 * 48); // set the countdown date
+              var days, hours, minutes, seconds; // variables for time units
 
+              var countdown = document.getElementById("tiles"); // get tag element
+
+              getCountdown();
+
+              setInterval(function () {
+                getCountdown();
+              }, 1000);
+
+              function getCountdown() {
+
+                // find the amount of "seconds" between now and target
+                var current_date = new Date().getTime();
+                var seconds_left = (target_date - current_date) / 1000;
+
+                days = pad(parseInt(seconds_left / 86400));
+                seconds_left = seconds_left % 86400;
+
+                hours = pad(parseInt(seconds_left / 3600));
+                seconds_left = seconds_left % 3600;
+
+                minutes = pad(parseInt(seconds_left / 60));
+                seconds = pad(parseInt(seconds_left % 60));
+
+                // format countdown string + set tag value
+                countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes +
+                  "</span><span>" + seconds + "</span>";
+              }
+
+              function pad(n) {
+                return (n < 10 ? '0' : '') + n;
+              }
+            </script>
+          </div>
+        </div>
+        <br>
+        <br>
+        <h5 id="h5stock"><b>Only 29 items left in Stock!</b></h5>
+        <div class="progress" style="height:5px" id="progress">
+          <div class="progress-bar bg-dark" style="width:56%;height:5px"></div>
+        </div>
+        <hr>
+        <br>
+        <p><span id="specs">COLOR:</span> <span id="details"><b>BLACK AND BLUE</b></span></p>
+        <img src="grad2.png" alt="" id="grad2">
+        <img src="grad1.png" alt="" id="grad1">
+        <br><br>
+        <p><span id="specs">SIZE:</span> <span id="details"><b>30</b></span></p>
+        <button id="size">30</button>
+        <button id="size">32</button>
+        <button id="size"><strike><b>34</b></strike></button>
+        <button id="size">36</button>
+        <button id="size">38</button>
+        <button id="size">40</button>
+        <button id="size">42</button>
+        <p><span id="specs">Material:</span> <span id="details"><b>SILK</b></span></p>
+        <button id="silk"><b>SILK</b></button>
+        <button id="cotton">COTTON</button>
+        <br>
+        <button id="cotton"><u>Clear All</u></button>
+        <br>
+        <button id="del"><b><u>SIZE GUIDE</u></b></button>
+        <button id="ret"><b><u>DELIVERY AND RETURN</u></b></button>
+        <br>
+        <h6><b>QUANTITY</b></h6>
+        <input type="number" name="points" step="1">
+        <br>
+        <br>
+        <button type="button" class="btn btn-dark btn-block" id="bb">ADD TO CART</button>
+        <br>
+        <button type="button" class="btn btn-outline-dark" id="wb">ADD TO WISHLIST</button>
+        <button type="button" class="btn btn-outline-dark" id="wb">ADD TO COMPARE</button>
+        <br>
+        <br>
+        <img src="gsc2.jpg.jpeg" id="safe" alt="">
       </div>
 
     </div>
+
+  </div>
+
+  </div>
 
   </div>
 
